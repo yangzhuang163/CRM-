@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+		"http://mybatis.org/dtd/mybatis-3-config.dtd"> 
+<configuration> 
+	<settings>
+		<setting name="cacheEnabled" value="true"/>
+	</settings>
+  <typeAliases> <!-- 类型别名 -->
+	 <package name="com.crm.pojo"/> 
+  </typeAliases> 
+ 
+  <environments default="development"> 
+	<environment id="development"> 			<!-- 一个数据库环境 -->
+	  <transactionManager type="JDBC" />    <!-- 事务管理器 -->
+	   <dataSource type="POOLED">		<!-- 数据源 -->
+		<property name="driver" value="oracle.jdbc.driver.OracleDriver" /> 
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:ORCL" /> 
+		<property name="username" value="crm" /> 
+		<property name="password" value="crm" /> 
+	  </dataSource> 
+	</environment> 
+  </environments> 
+  
+  <mappers> 
+	 <package name="com.crm.mapper"/>  
+  </mappers> 	
+</configuration>

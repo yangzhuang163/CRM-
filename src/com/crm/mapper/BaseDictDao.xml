@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.crm.mapper.BaseDictDao" >
+  
+  <select id="selectByTypecode" resultType="baseDict" parameterType="String" >
+    select *
+      from sys_base_dict
+	 where dict_type_code = #{typecode}
+  </select>
+  
+  <select id="selectByPrimaryKey" resultType="baseDict" parameterType="java.lang.String" >
+    select *
+      from sys_base_dict
+     where dict_id = #{dictId}
+  </select>
+</mapper>
